@@ -4,7 +4,7 @@
 #include <time.h>
 
 /*n正方行列のサイズを定義*/
-#define MATRIX_SIZE 1024
+#define MATRIX_SIZE 2048
 
 int main(int argc, char** argv){
   unsigned int col_idx, row_idx, scan_idx;

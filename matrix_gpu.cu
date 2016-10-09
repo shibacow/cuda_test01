@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include <helper_cuda.h>
-//#include <helper_functions.h>
+#include <helper_cuda.h>
+#include <helper_functions.h>
+//#include <cuda_runtime.h>
 
-#define MATRIX_SIZE 1024/*行列１辺の数*/
+#define MATRIX_SIZE 2048/*行列１辺の数*/
 #define BLOCK_SIZE 16
 
 __global__ void
@@ -44,7 +45,7 @@ int main(int argc, char** argv){
   dim3 grid(MATRIX_SIZE/BLOCK_SIZE, MATRIX_SIZE/BLOCK_SIZE);
 
   /*タイマーを作成して計測開始*/
-  cudaevent_t start;
+  cudaEvent_t start;
   cudaEvent_t stop;
   checkCudaErrors(cudaEventCreate(&start));
   checkCudaErrors(cudaEventCreate(&stop));
