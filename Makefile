@@ -4,7 +4,11 @@ CFLAG= -std=c++11
 all: matrix_gpu matrix_cpu
 
 matrix_gpu: matrix_gpu.cu
-	nvcc $(INCLUDE) $(CFLAG) -o matrix_gpu matrix_gpu.cu
+	nvcc $(INCLUDE) $(CFLAG) -o matrix_gpu.exe matrix_gpu.cu
 
 matrix_cpu: matrix_cpu.cu
-	nvcc -o matrix_cpu matrix_cpu.cu
+	nvcc -o matrix_cpu.exe matrix_cpu.cu
+.PHONY: clean
+clean: 
+	rm *.exe
+

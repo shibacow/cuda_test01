@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <helper_cuda.h>
 #include <helper_functions.h>
+#include "max_size.h"
+
 //#include <cuda_runtime.h>
 
-#define MATRIX_SIZE 2048/*行列１辺の数*/
+//#define MATRIX_SIZE 2048/*行列１辺の数*/
 #define BLOCK_SIZE 16
 
 __global__ void
